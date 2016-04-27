@@ -49,15 +49,13 @@ public void beforeMethod() {
 			
 		}
 
-		
+	@Test	
 	public void VerifyApprPage() {
-		driver = new InternetExplorerDriver();
-		driver.manage().window().maximize();
-		driver.get("http://www.uptake.com");
 		
+		driver.manage().window().maximize();
 		ApproachPage ApproachPage =new ApproachPage(driver);
 		ApproachPage.FindSection();
-		driver.close();
+		
 				}
 	@AfterMethod
 	public void afterMethod() {

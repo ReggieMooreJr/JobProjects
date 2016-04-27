@@ -1,6 +1,7 @@
 package com.Uptake;
 
 import java.awt.List;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -24,51 +25,53 @@ public class Homepage {
 	By PeopleLink = By.id("menu-item-4162");
 	By JoinUsLink = By.id("menu-item-4167");
 	By BlogLink = By.id("menu-item-4166");
+
+	
 	
 public Homepage(WebDriver driver){
 	this.driver=driver;
  
 }
 
-public void checkkMainPageLinks(){
-	String baseURL="www.uptake.com";
-	driver.get(baseURL);
-	java.util.List<WebElement> Rlinks = driver.findElements(By.tagName("a")); 
-	System.out.println("Total no of links Available: ");
-	int k = Rlinks.size();
-	System.out.println("List of links Available: ");
-	for(int i=0;i<k;i++)
-	{
-	if(Rlinks.get(i).getAttribute("href").contains("google"))
-	{
-	String link =Rlinks.get(i).getAttribute("href");
-	System.out.println(link);
-	}   
-	}
+
+	public static ArrayList findAllLinks(WebDriver driver){
+	   {
+	 	  java.util.List<WebElement> elementList = new ArrayList();
+	 	  elementList = driver.findElements(By.tagName("a"));
+	 	  elementList.addAll(driver.findElements(By.tagName("img")));
+	 	  ArrayList finalList = new ArrayList(); ;
+	 	  for (WebElement element : elementList)
+		  {
+			  if(element.getAttribute("href") != null)
+			  {
+	 
+				  finalList.add(element);
+				  System.out.println(finalList);
+				  }		  
+	 		  }	
+	 
+		  return finalList;  
+	  }
 }
-
-
 public void clickApproach(){
-	   
-		driver = new InternetExplorerDriver(); 
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+	    //String driverPath="C:/Users/Letisha/Desktop/IE/";
+	
+	    
+		
 		System.out.println("Step 1");
+	    driver = new InternetExplorerDriver(); 
+		System.out.println("Step 2");
 	    driver.get("www.uptake.com");
-	    driver.findElement(ApproachLink).clear();
-	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		String title =driver.getTitle();
+	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	    System.out.println("Step 3");
+	    driver.findElement(ApproachLink).click();
+	    System.out.println("Step 4");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		System.out.println(title);
+		
 		System.out.println("Page open sucessfull");
 
-		//WebDriverWait = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Approach")));
-		String url=driver.getCurrentUrl();
-		
-		System.out.println(url);
-		String linktext = driver.findElement(ApproachLink).getText();
-	    System.out.println(linktext);
-	    driver.findElement(ApproachLink).clear();
-	   
+			   
 	    
 	}
 public void clickPlatformLink(){

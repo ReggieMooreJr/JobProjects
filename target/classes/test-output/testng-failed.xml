@@ -5,7 +5,6 @@
     <classes>
       <class name="target.VerifyHome">
         <methods>
-          <include name="VerifyApprPage"/>
           <include name="beforeMethod"/>
           <include name="VerifyHomePage"/>
           <include name="afterMethod"/>
