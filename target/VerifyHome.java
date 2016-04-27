@@ -1,4 +1,4 @@
-package com.Uptake;
+package target;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -11,6 +11,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.*;
+
+import com.Uptake.ApproachPage;
+import com.Uptake.Homepage;
+
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
@@ -29,35 +33,21 @@ public void beforeMethod() {
 	  /////Use IE Web driver
 	  System.out.println("Launching IE");
 	  System.setProperty("webdriver.ie.driver", driverPath + "IEDriverServer.exe" );
-	  driver = new InternetExplorerDriver();
+	  //driver = new InternetExplorerDriver();
 	  //driver.manage().window().maximize();
-	  driver.get("http://www.uptake.com");
+	  //driver.get("http://www.uptake.com");
 	  //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	  //driver.close();
 	  }
 		@Test
-		//public void VerifyHomePage() {
-		//driver = new InternetExplorerDriver();
-		//Homepage Homepage=new Homepage(driver);
-		//Homepage.checkkMainPageLinks();
+		public void VerifyHomePage() {
+		Homepage Homepage=new Homepage(driver);
+	    System.out.println("mj");
+		Homepage.clickApproach();
 		//Homepage.clickBlogLink();
 		//Homepage.clickPeopleLink();
-			public void checkkMainPageLinks(){
-				String baseURL="www.uptake.com";
-				driver.get(baseURL);
-				java.util.List<WebElement> Rlinks = driver.findElements(By.tagName("a")); 
-				System.out.println("Total no of links Available: ");
-				int k = Rlinks.size();
-				System.out.println("List of links Available: ");
-				for(int i=0;i<k;i++)
-				{
-				if(Rlinks.get(i).getAttribute("href").contains("google"))
-				{
-				String link =Rlinks.get(i).getAttribute("href");
-				System.out.println(link);
-				}   
-				}
-}
+			
+		}
 
 		
 	public void VerifyApprPage() {
