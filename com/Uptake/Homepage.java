@@ -63,9 +63,11 @@ public void clickApproach(){
 	    driver = new InternetExplorerDriver(); 
 		System.out.println("Step 2");
 	    driver.get("www.uptake.com");
+	    boolean URLname=driver.getCurrentUrl().equals("www.uptake.com");
+	    System.out.println(URLname);
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	    System.out.println("Step 3");
-	    driver.findElement(ApproachLink).click();
+	    driver.findElement(ApproachLink);
 	    System.out.println("Step 4");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		

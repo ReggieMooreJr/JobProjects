@@ -5,10 +5,11 @@
     <classes>
       <class name="target.VerifyHome">
         <methods>
+          <include name="PostTestInformation"/>
           <include name="VerifyApprPage"/>
           <include name="beforeMethod"/>
           <include name="VerifyHomePage"/>
-          <include name="afterMethod"/>
+          <include name="VerifyAllLinksHomepage"/>
         </methods>
       </class> <!-- target.VerifyHome -->
     </classes>
