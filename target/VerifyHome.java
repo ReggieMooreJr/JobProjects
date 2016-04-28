@@ -50,7 +50,7 @@ public void beforeMethod() {
 
 	 }
 	 //Third Test - Checks connection with Solutions Page.
-	@Test
+	//@Test
 	 public void VerifySolutionsPage(){
 		 System.out.println("Start the Test");
 		 Solutions.VerifyCheckLink_Solu();
