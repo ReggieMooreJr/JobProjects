@@ -1,4 +1,4 @@
-package com.Uptake;
+package com.Uptake.IE;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;

@@ -7,19 +7,20 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 //// This class will identify all the objects on the home page for Uptake.com
-public class Homepage {
+public class HomepageFF {
 
 	 WebDriver driver;
 	
 	
 	//By ApproachLink = By.linkText("http://uptake.com/approach");
 
-	By ApproachLink =By.linkText("Approach");
+	By ApproachLink =By.id("menu-item-4164");
 	By PlatformLink =By.xpath("//div[@id='Platform']/a");
 	By SolutionsLink = By.id("menu-item-4162");
 	By PeopleLink = By.id("menu-item-4162");
@@ -28,51 +29,27 @@ public class Homepage {
 
 	
 	
-public Homepage(WebDriver driver){
+public HomepageFF(WebDriver driver){
 	this.driver=driver;
  
 }
 
 
-	public static ArrayList findAllLinks(WebDriver driver){
-	   {
-	 	  java.util.List<WebElement> elementList = new ArrayList();
-	 	  elementList = driver.findElements(By.tagName("a"));
-	 	  elementList.addAll(driver.findElements(By.tagName("img")));
-	 	  ArrayList finalList = new ArrayList(); ;
-	 	  for (WebElement element : elementList)
-		  {
-			  if(element.getAttribute("href") != null)
-			  {
-	 
-				  finalList.add(element);
-				  System.out.println(finalList);
-				  }		  
-	 		  }	
-	 
-		  return finalList;  
-	  }
-}
+	
 public void clickApproach(){
 
-	    //String driverPath="C:/Users/Letisha/Desktop/IE/";
-	
-	    
-		
 		System.out.println("Step 1");
-	    driver = new InternetExplorerDriver(); 
+		WebDriver driver = new FirefoxDriver();; 
 		System.out.println("Step 2");
-	    driver.get("www.uptake.com");
-	    boolean URLname=driver.getCurrentUrl().equals("www.uptake.com");
-	    System.out.println(URLname);
+	    driver.get("http://uptake.com");
+	    //boolean URLname=driver.getCurrentUrl().equals("http://uptake.com");
+	    //System.out.println(URLname);
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	    System.out.println("Step 3");
-	    driver.findElement(ApproachLink);
+	    driver.findElement(ApproachLink).click();
 	    System.out.println("Step 4");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		
-		System.out.println("Page open sucessfull");
-
+	   	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	   	driver.close();
 			   
 	    
 	}
