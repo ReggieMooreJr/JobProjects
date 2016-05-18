@@ -3,14 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="target.VerifyHome">
+      <class name="VerifyHomePageTest1">
         <methods>
-          <include name="PostTestInformation"/>
-          <include name="VerifyPeoplePage"/>
-          <include name="VerifySolutionsPage"/>
-          <include name="beforeMethod"/>
+          <include name="ChecknewLinks"/>
         </methods>
-      </class> <!-- target.VerifyHome -->
+      </class> <!-- VerifyHomePageTest1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
