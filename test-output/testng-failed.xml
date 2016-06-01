@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="VerifyHomePageTest1">
+      <class name="com.ReggieTest.AccountChecks">
         <methods>
-          <include name="ChecknewLinks"/>
+          <include name="ClickSignIn"/>
+          <include name="VerifyAccountTest"/>
         </methods>
-      </class> <!-- VerifyHomePageTest1 -->
+      </class> <!-- com.ReggieTest.AccountChecks -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
